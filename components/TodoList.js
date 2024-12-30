@@ -99,8 +99,8 @@ const TaskApp = () => {
       return task;
     });
     await AsyncStorage.setItem("tasks", JSON.stringify(updatedTasks));
-    setTasks(updatedTasks); // обновляем состояние задач
-    loadTasks(); // загружаем задачи заново для обновления компонента
+    setTasks(updatedTasks);
+    loadTasks();
   };
 
   const markAsCancel = async (id) => {
@@ -111,15 +111,15 @@ const TaskApp = () => {
       return task;
     });
     await AsyncStorage.setItem("tasks", JSON.stringify(updatedTasks));
-    setTasks(updatedTasks); // обновляем состояние задач
-    loadTasks(); // загружаем задачи заново для обновления компонента
+    setTasks(updatedTasks);
+    loadTasks();
   };
 
   const deleteTask = async (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     await AsyncStorage.setItem("tasks", JSON.stringify(updatedTasks));
-    setTasks(updatedTasks); // обновляем состояние задач
-    loadTasks(); // загружаем задачи заново для обновления компонента
+    setTasks(updatedTasks);
+    loadTasks();
   };
 
   const viewTask = (task) => {
@@ -157,6 +157,7 @@ const TaskApp = () => {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        padding: 5,
       }}
     >
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
